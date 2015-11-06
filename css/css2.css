@@ -201,7 +201,7 @@
   width: 75%;
   height: 310px;
   background: #800000;
-  opacity: .5;
+  opacity: 1;
 }
 
 #BriShow {
@@ -212,8 +212,8 @@
 }
 #BriShow #BriShow-1 {
   height: 300px;
-  width: 1593px;
-  background: url(BriannaScroll.jpg);
+  width: 3012px;
+  background: url(BriannaScroll300M.jpg);
   position: relative;
   top: 0;
   left: 0;
@@ -226,7 +226,7 @@
 
     -webkit-animation: moveSlideshow 60s linear infinite;
     -moz-animation:    moveSlideshow 60s linear infinite;
-    animation: moveSlideeshow 60s linear infinite;
+    animation: moveSlideshow 60s linear infinite;
 }
 @-webkit-keyframes moveSlideshow {
     0% { left: 0; }
