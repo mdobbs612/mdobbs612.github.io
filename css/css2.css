@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:900);
+@font-face {
+ font-family:fette-fraktur;
+ src: url(FetteUNZFraktur.eot);
+} 
+@font-face {
+ font-family:fette-fraktur;
+ src: url(FetteUNZFraktur.ttf);
+} 
+
+
+.page-wrapper {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.title {
+  overflow: hidden;
+}
+.title:before {
+  content: "";
+  margin-left: -10px;
+  float:right;
+  width: 0px;
+}
+#U:before {
+  padding-top: 100%;
+}
+#C1:before {
+  padding-top: 100%;
+}
+#X:before {
+  padding-top: 100%;
+}
+#C2:before {
+  padding-top: 100%;
+}
+#c_rectangle:before {
+  padding-top: 25%;
+}
+.title {
+  top: 200px;
+  margin: 0 0;
+  width: 12.5%;
+  color: #999;
+  background: #800000;
+  font-family: fette-fraktur;
+  font-size: 200%;
+  font-size: 9vw;
+  text-align: center;
+  line-height: 130%;
+  z-index: 2;
+}
+  @media (max-width: 700px) {
+    .title {
+      font-size: 700%;
+      font-size: 19vw;
+      width: 25%;
+    }
+  }
+#U {
+  color: #fff;
+  position: absolute;
+  left: 0px;
+}
+#C1 {
+  position: absolute;
+  background: #ffffff; 
+  left: 12.5%;
+  color: black;
+  z-index: 2;
+}
+  @media (max-width: 700px) {
+    #C1 {
+      left: 25%
+    }
+  }
+#X {
+  position: absolute;
+  height: 400px;
+  left: 25%;
+  color: #fff;
+}
+  @media (max-width: 700px) {
+    #X {
+      left: 50%;
+    }
+  }
+#C2 {
+  position: absolute;
+  background: #ffffff; 
+  color: black;
+  left: 37.5%;
+  z-index: 2;
+}
+  @media (max-width: 700px) {
+    #C2 {
+      left: 75%;
+    }
+  }
+#c_rectangle {
+  position: absolute;
+  left: 50%;
+  background: #ffffff;
+  width: 50%;
+}
+  @media (max-width: 700px) {
+    #c_rectangle {
+      height: 0;
+    }
+  }
+.title .circle {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  background: #800000;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.title .circle:hover {
+  opacity: .5;
+  
+}
+  
+#rectangle {
+  width: 12.5%;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  top: 0px;
+  background: #800000;
+}
+  @media (max-width: 700px) {
+    #rectangle {
+      width: 25%;
+    }
+  }
+#banner {
+  overflow: hidden;
+  background: #ffffff url(WomensHuddle.jpg) no-repeat bottom center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;/*
+  background-position: right 0px top 85px;
+  background-position: right 50% top 8vw;*/
+  width: 100%;
+
+  position: absolute;
+  height: 500px;
+  top: 750px;
+  padding-top: 25%;
+  
+  left: 0;
+  z-index: 1;
+}
+
+  @media (max-width: 700px) {
+    #banner {
+      top: 0px;
+      background-position: right 0px top -20px;
+      width: 75%;
+      left: 25%;
+      height: 200px;
+    }
+  }
+#banner1{
+  overflow: hidden;
+  background: #800000 url(TeamHuddle.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 25%;
+  height: 200px;
+  position: absolute;
+  left: 12.5%;
+  top:0;
+  z-index: 3;
+}
+  @media (max-width: 700px) {
+    #banner1 {
+      top: 600px;
+    }
+  }
+
+.image_bar {
+  position: absolute;
+  top: 400px;
+  left: 25%;
+  width: 75%;
+  height: 310px;
+  background: #800000;
+  opacity: .5;
+}
+
+#BriShow {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+#BriShow #BriShow-1 {
+  height: 300px;
+  width: 1593px;
+  background: url(BriannaScroll.jpg);
+  position: relative;
+  top: 0;
+  left: 0;
+
+    -moz-transition:  opacity 0.5s ease-out; 
+    -o-transition: opacity 0.5s ease-out; 
+    -webkit-transition: opacity 0.5s ease-out; 
+    -ms-transition: opacity 0.5s ease-out; 
+    transition: opacity 0.5s ease-out;
+
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
+    animation: moveSlideeshow 60s linear infinite;
+}
+@-webkit-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1593px; }
+}
+@-moz-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1593px; }
+}
+@keyframes moveSlideshow {
+  0% { left: 0; }
+  100% { left: -1593px; }
+}
