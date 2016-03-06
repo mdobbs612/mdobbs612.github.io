@@ -6821,28 +6821,28 @@ Elm.Game.make = function (_elm) {
             return A2(foo,_p4._0,_p4._1);
          }
    };
-   var drawWin = function (w) {    return A3($Graphics$Element.image,w,w,"images/win.png");};
+   var drawWin = function (w) {    return A3($Graphics$Element.image,w,w,"/images/win.png");};
    var drawSquare = F2(function (v,w) {
-      var imgsrc = A2($String.append,"images/",A2($String.append,$Basics.toString(v),".png"));
+      var imgsrc = A2($String.append,"/images/",A2($String.append,$Basics.toString(v),".png"));
       return A3($Graphics$Element.image,w,w,imgsrc);
    });
    var makeShiftButton = F3(function (msg,w,r) {
       return r ? A4($Graphics$Input.customButton,
       msg,
-      A3($Graphics$Element.image,w,w,"images/incrr.png"),
-      A3($Graphics$Element.image,w,w,"images/incrrh.png"),
-      A3($Graphics$Element.image,w,w,"images/incrrc.png")) : A4($Graphics$Input.customButton,
+      A3($Graphics$Element.image,w,w,"/images/incrr.png"),
+      A3($Graphics$Element.image,w,w,"/images/incrrh.png"),
+      A3($Graphics$Element.image,w,w,"/images/incrrc.png")) : A4($Graphics$Input.customButton,
       msg,
-      A3($Graphics$Element.image,w,w,"images/incr.png"),
-      A3($Graphics$Element.image,w,w,"images/incrh.png"),
-      A3($Graphics$Element.image,w,w,"images/incrc.png"));
+      A3($Graphics$Element.image,w,w,"/images/incr.png"),
+      A3($Graphics$Element.image,w,w,"/images/incrh.png"),
+      A3($Graphics$Element.image,w,w,"/images/incrc.png"));
    });
    var makePlusButton = F2(function (msg,w) {
       return A4($Graphics$Input.customButton,
       msg,
-      A3($Graphics$Element.image,w,w,"images/plus.png"),
-      A3($Graphics$Element.image,w,w,"images/plush.png"),
-      A3($Graphics$Element.image,w,w,"images/plusc.png"));
+      A3($Graphics$Element.image,w,w,"/images/plus.png"),
+      A3($Graphics$Element.image,w,w,"/images/plush.png"),
+      A3($Graphics$Element.image,w,w,"/images/plusc.png"));
    });
    var col3 = _U.list([0,0,1,0,0,1,0,0,1]);
    var col2 = _U.list([0,1,0,0,1,0,0,1,0]);
@@ -6893,7 +6893,7 @@ Elm.Game.make = function (_elm) {
       $Graphics$Element.down,
       _U.list([A2($Graphics$Element.flow,
               $Graphics$Element.right,
-              _U.list([A3($Graphics$Element.image,w,w,"images/empty.png")
+              _U.list([A3($Graphics$Element.image,w,w,"/images/empty.png")
                       ,A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: false,_1: true,_2: 0}),w,false)
                       ,A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: false,_1: true,_2: 1}),w,false)
                       ,A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: false,_1: true,_2: 2}),w,false)]))
@@ -6920,7 +6920,7 @@ Elm.Game.make = function (_elm) {
                       ,A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: false,_1: false,_2: 2}),w,true)]))
               ,A2($Graphics$Element.flow,
               $Graphics$Element.right,
-              _U.list([A3($Graphics$Element.image,w,w,"images/empty.png")
+              _U.list([A3($Graphics$Element.image,w,w,"/images/empty.png")
                       ,A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: true,_1: false,_2: 0}),w)
                       ,A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: true,_1: false,_2: 1}),w)
                       ,A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple3",_0: true,_1: false,_2: 2}),w)]))]));
