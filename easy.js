@@ -6954,26 +6954,44 @@ Elm.Game.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Window = Elm.Window.make(_elm);
    var _op = {};
-   var initState = {ctor: "_Tuple4",_0: _U.list([0,0,0,8,8,8,0,0,0]),_1: false,_2: 0,_3: 3};
+   var initState = {ctor: "_Tuple4"
+                   ,_0: _U.list([0,0,0,8,8,8,0,0,0])
+                   ,_1: false
+                   ,_2: 0
+                   ,_3: 3};
    var generateMove = function (s) {
       return A2($Random.generate,
       A5($Random.map4,
-      F4(function (v0,v1,v2,v3) {    return {ctor: "_Tuple4",_0: v0,_1: v1,_2: v2,_3: v3};}),
+      F4(function (v0,v1,v2,v3) {
+         return {ctor: "_Tuple4",_0: v0,_1: v1,_2: v2,_3: v3};
+      }),
       $Random.bool,
       $Random.bool,
       A2($Random.$int,0,2),
       A2($Random.$int,1,1)),
       s);
    };
-   var generateNew = function (s) {    return A2($Random.generate,A2($Random.list,9,A2($Random.$int,0,8)),s);};
+   var generateNew = function (s) {
+      return A2($Random.generate,
+      A2($Random.list,9,A2($Random.$int,0,8)),
+      s);
+   };
    var scrambleHelp = function () {
       var initSeed = $Random.initialSeed(4);
       return A3($Signal.foldp,
-      F2(function (tick,_p0) {    var _p1 = _p0;return generateMove(_p1._1);}),
-      {ctor: "_Tuple2",_0: {ctor: "_Tuple4",_0: false,_1: false,_2: -3,_3: 1},_1: initSeed},
+      F2(function (tick,_p0) {
+         var _p1 = _p0;
+         return generateMove(_p1._1);
+      }),
+      {ctor: "_Tuple2"
+      ,_0: {ctor: "_Tuple4",_0: false,_1: false,_2: -3,_3: 1}
+      ,_1: initSeed},
       $Time.every(20));
    }();
-   var scramble = function () {    var getE = function (_p2) {    var _p3 = _p2;return _p3._0;};return A2($Signal.map,getE,scrambleHelp);}();
+   var scramble = function () {
+      var getE = function (_p2) {    var _p3 = _p2;return _p3._0;};
+      return A2($Signal.map,getE,scrambleHelp);
+   }();
    var ith = F2(function (i,xs) {
       ith: while (true) {
          var _p4 = xs;
@@ -6985,7 +7003,9 @@ Elm.Game.make = function (_elm) {
                      continue ith;
                   }
             } else {
-               return _U.crashCase("Game",{start: {line: 194,column: 3},end: {line: 198,column: 51}},_p4)("Outside of List Bounds");
+               return _U.crashCase("Game",
+               {start: {line: 198,column: 3},end: {line: 202,column: 51}},
+               _p4)("Outside of List Bounds");
             }
       }
    });
@@ -6996,9 +7016,13 @@ Elm.Game.make = function (_elm) {
                return _U.list([]);
             } else {
                var _p7 = _p6._1;
-               return _U.eq(i,x) ? A2($List._op["::"],A2(ith,y,xs),A5(rebuild,x,y,z,i + 1,_p7)) : _U.eq(i,y) ? A2($List._op["::"],
+               return _U.eq(i,x) ? A2($List._op["::"],
+               A2(ith,y,xs),
+               A5(rebuild,x,y,z,i + 1,_p7)) : _U.eq(i,y) ? A2($List._op["::"],
                A2(ith,z,xs),
-               A5(rebuild,x,y,z,i + 1,_p7)) : _U.eq(i,z) ? A2($List._op["::"],A2(ith,x,xs),A5(rebuild,x,y,z,i + 1,_p7)) : A2($List._op["::"],
+               A5(rebuild,x,y,z,i + 1,_p7)) : _U.eq(i,z) ? A2($List._op["::"],
+               A2(ith,x,xs),
+               A5(rebuild,x,y,z,i + 1,_p7)) : A2($List._op["::"],
                _p6._0,
                A5(rebuild,x,y,z,i + 1,_p7));
             }
@@ -7006,10 +7030,20 @@ Elm.Game.make = function (_elm) {
       return A5(rebuild,x,y,z,0,xs);
    });
    var colShift = F2(function (n,xs) {
-      return _U.eq(n,0) ? A4(shiftThree,0,3,6,xs) : _U.eq(n,1) ? A4(shiftThree,1,4,7,xs) : _U.eq(n,2) ? A4(shiftThree,2,5,8,xs) : xs;
+      return _U.eq(n,0) ? A4(shiftThree,0,3,6,xs) : _U.eq(n,
+      1) ? A4(shiftThree,1,4,7,xs) : _U.eq(n,2) ? A4(shiftThree,
+      2,
+      5,
+      8,
+      xs) : xs;
    });
    var rowShift = F2(function (n,xs) {
-      return _U.eq(n,0) ? A4(shiftThree,2,1,0,xs) : _U.eq(n,1) ? A4(shiftThree,5,4,3,xs) : _U.eq(n,2) ? A4(shiftThree,8,7,6,xs) : xs;
+      return _U.eq(n,0) ? A4(shiftThree,2,1,0,xs) : _U.eq(n,
+      1) ? A4(shiftThree,5,4,3,xs) : _U.eq(n,2) ? A4(shiftThree,
+      8,
+      7,
+      6,
+      xs) : xs;
    });
    var allNine = function (xs) {
       allNine: while (true) {
@@ -7029,14 +7063,31 @@ Elm.Game.make = function (_elm) {
       var h = $Basics.round($Basics.toFloat(w) / 2);
       var nimage = $Graphics$Element.centered(A2($Text.color,
       $Color.lightCharcoal,
-      A2($Text.height,$Basics.toFloat(w) / 2,$Text.fromString($Basics.toString(n)))));
-      var moves = $Graphics$Element.centered(A2($Text.color,$Color.lightCharcoal,A2($Text.height,$Basics.toFloat(w) / 4,$Text.fromString("Moves:"))));
+      A2($Text.height,
+      $Basics.toFloat(w) / 2,
+      $Text.fromString($Basics.toString(n)))));
+      var moves = $Graphics$Element.centered(A2($Text.color,
+      $Color.lightCharcoal,
+      A2($Text.height,
+      $Basics.toFloat(w) / 4,
+      $Text.fromString("Moves:"))));
       return A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _U.list([A4($Graphics$Element.container,w,h,$Graphics$Element.middle,moves),A4($Graphics$Element.container,w,h,$Graphics$Element.middle,nimage)]));
+      _U.list([A4($Graphics$Element.container,
+              w,
+              h,
+              $Graphics$Element.middle,
+              moves)
+              ,A4($Graphics$Element.container,
+              w,
+              h,
+              $Graphics$Element.middle,
+              nimage)]));
    });
    var drawSquare = F2(function (v,w) {
-      var imgsrc = A2($String.append,"./images/",A2($String.append,$Basics.toString(v),".png"));
+      var imgsrc = A2($String.append,
+      "./images/",
+      A2($String.append,$Basics.toString(v),".png"));
       return A3($Graphics$Element.image,w,w,imgsrc);
    });
    var makeShiftButton = F3(function (msg,w,r) {
@@ -7044,7 +7095,10 @@ Elm.Game.make = function (_elm) {
       msg,
       A3($Graphics$Element.image,w,w,"./images/incrr.png"),
       A3($Graphics$Element.image,w,w,"./images/incrrh.png"),
-      A3($Graphics$Element.image,w,w,"./images/incrrc.png")) : A4($Graphics$Input.customButton,
+      A3($Graphics$Element.image,
+      w,
+      w,
+      "./images/incrrc.png")) : A4($Graphics$Input.customButton,
       msg,
       A3($Graphics$Element.image,w,w,"./images/incr.png"),
       A3($Graphics$Element.image,w,w,"./images/incrh.png"),
@@ -7061,19 +7115,31 @@ Elm.Game.make = function (_elm) {
    var col2 = _U.list([0,1,0,0,1,0,0,1,0]);
    var col1 = _U.list([1,0,0,1,0,0,1,0,0]);
    var rowIncr = F2(function (n,xs) {
-      return _U.eq(n,0) ? A3($List.map2,F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),col1,xs) : _U.eq(n,1) ? A3($List.map2,
+      return _U.eq(n,0) ? A3($List.map2,
+      F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
+      col1,
+      xs) : _U.eq(n,1) ? A3($List.map2,
       F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
       col2,
-      xs) : _U.eq(n,2) ? A3($List.map2,F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),col3,xs) : xs;
+      xs) : _U.eq(n,2) ? A3($List.map2,
+      F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
+      col3,
+      xs) : xs;
    });
    var row3 = _U.list([0,0,0,0,0,0,1,1,1]);
    var row2 = _U.list([0,0,0,1,1,1,0,0,0]);
    var row1 = _U.list([1,1,1,0,0,0,0,0,0]);
    var colIncr = F2(function (n,xs) {
-      return _U.eq(n,0) ? A3($List.map2,F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),row1,xs) : _U.eq(n,1) ? A3($List.map2,
+      return _U.eq(n,0) ? A3($List.map2,
+      F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
+      row1,
+      xs) : _U.eq(n,1) ? A3($List.map2,
       F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
       row2,
-      xs) : _U.eq(n,2) ? A3($List.map2,F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),row3,xs) : xs;
+      xs) : _U.eq(n,2) ? A3($List.map2,
+      F2(function (x,y) {    return A2($Basics._op["%"],x + y,9);}),
+      row3,
+      xs) : xs;
    });
    var upstate = F2(function (_p10,_p9) {
       var _p11 = _p10;
@@ -7085,33 +7151,66 @@ Elm.Game.make = function (_elm) {
       var _p16 = _p12._3;
       var _p15 = _p12._2;
       var _p14 = _p12._1;
-      if (_U.eq(_p16,0) && _U.eq(_p20,1)) return {ctor: "_Tuple4",_0: _p17,_1: _p14,_2: _p15,_3: _p16}; else if (_U.eq(_p20,-1)) return {ctor: "_Tuple4"
-                                                                                                                                        ,_0: _p17
-                                                                                                                                        ,_1: false
-                                                                                                                                        ,_2: 0
-                                                                                                                                        ,_3: 3};
-         else if (_U.eq(_p19,-1)) return {ctor: "_Tuple4",_0: _p17,_1: false,_2: _p15,_3: _p16}; else if (_U.eq(_p19,-2)) {
+      if (_U.eq(_p16,0) && _U.eq(_p20,1)) return {ctor: "_Tuple4"
+                                                 ,_0: _p17
+                                                 ,_1: _p14
+                                                 ,_2: _p15
+                                                 ,_3: _p16}; else if (_U.eq(_p20,-1)) return {ctor: "_Tuple4"
+                                                                                             ,_0: _p17
+                                                                                             ,_1: false
+                                                                                             ,_2: 0
+                                                                                             ,_3: 3}; else if (_U.eq(_p19,-1)) return {ctor: "_Tuple4"
+                                                                                                                                      ,_0: _p17
+                                                                                                                                      ,_1: false
+                                                                                                                                      ,_2: _p15
+                                                                                                                                      ,_3: _p16};
+            else if (_U.eq(_p19,-2)) {
                      var seed = $Random.initialSeed(_p15);
                      var _p13 = generateNew(seed);
                      var xs$ = _p13._0;
                      var s = _p13._1;
                      return {ctor: "_Tuple4",_0: xs$,_1: false,_2: 12,_3: _p16};
-                  } else if (_U.eq(_p19,-3)) return {ctor: "_Tuple4",_0: _p17,_1: _p14,_2: _p15,_3: _p16}; else if (allNine(_p17) && _U.eq(_p20,0))
-                     return {ctor: "_Tuple4",_0: _p17,_1: true,_2: _p15,_3: _p16}; else if (_p11._0) if (_p18) {
+                  } else if (_U.eq(_p19,-3)) return {ctor: "_Tuple4"
+                                                    ,_0: _p17
+                                                    ,_1: _p14
+                                                    ,_2: _p15
+                                                    ,_3: _p16}; else if (allNine(_p17) && _U.eq(_p20,0))
+                     return {ctor: "_Tuple4",_0: _p17,_1: true,_2: _p15,_3: _p16};
+                     else if (_p11._0) if (_p18) {
                                  var xs$ = A2(colIncr,_p19,_p17);
-                                 return {ctor: "_Tuple4",_0: xs$,_1: allNine(xs$),_2: _p15 + 1,_3: _p16 - _p20};
+                                 return {ctor: "_Tuple4"
+                                        ,_0: xs$
+                                        ,_1: allNine(xs$)
+                                        ,_2: _p15 + 1
+                                        ,_3: _p16 - _p20};
                               } else {
                                  var xs$ = A2(rowIncr,_p19,_p17);
-                                 return {ctor: "_Tuple4",_0: xs$,_1: allNine(xs$),_2: _p15 + 1,_3: _p16 - _p20};
+                                 return {ctor: "_Tuple4"
+                                        ,_0: xs$
+                                        ,_1: allNine(xs$)
+                                        ,_2: _p15 + 1
+                                        ,_3: _p16 - _p20};
                               } else if (_p18) {
                                  var xs$ = A2(colShift,_p19,_p17);
-                                 return {ctor: "_Tuple4",_0: xs$,_1: allNine(_p17),_2: _p15 + 1,_3: _p16 - _p20};
+                                 return {ctor: "_Tuple4"
+                                        ,_0: xs$
+                                        ,_1: allNine(_p17)
+                                        ,_2: _p15 + 1
+                                        ,_3: _p16 - _p20};
                               } else {
                                  var xs$ = A2(rowShift,_p19,_p17);
-                                 return {ctor: "_Tuple4",_0: xs$,_1: allNine(xs$),_2: _p15 + 1,_3: _p16 - _p20};
+                                 return {ctor: "_Tuple4"
+                                        ,_0: xs$
+                                        ,_1: allNine(xs$)
+                                        ,_2: _p15 + 1
+                                        ,_3: _p16 - _p20};
                               }
    });
-   var chgBox = $Signal.mailbox({ctor: "_Tuple4",_0: false,_1: false,_2: -1,_3: 1});
+   var chgBox = $Signal.mailbox({ctor: "_Tuple4"
+                                ,_0: false
+                                ,_1: false
+                                ,_2: -1
+                                ,_3: 1});
    var drawRow1 = F3(function (w,w2,n) {
       return A2($Graphics$Element.flow,
       $Graphics$Element.right,
@@ -7120,17 +7219,32 @@ Elm.Game.make = function (_elm) {
               w,
               w,
               $Graphics$Element.midBottom,
-              A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: false,_1: true,_2: 0,_3: 0}),w2,false))
+              A3(makeShiftButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: false,_1: true,_2: 0,_3: 0}),
+              w2,
+              false))
               ,A4($Graphics$Element.container,
               w,
               w,
               $Graphics$Element.midBottom,
-              A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: false,_1: true,_2: 1,_3: 0}),w2,false))
+              A3(makeShiftButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: false,_1: true,_2: 1,_3: 0}),
+              w2,
+              false))
               ,A4($Graphics$Element.container,
               w,
               w,
               $Graphics$Element.midBottom,
-              A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: false,_1: true,_2: 2,_3: 0}),w2,false))
+              A3(makeShiftButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: false,_1: true,_2: 2,_3: 0}),
+              w2,
+              false))
               ,A3($Graphics$Element.image,w,w,"./images/empty.png")]));
    });
    var drawRown = F4(function (w,w2,n,xs) {
@@ -7140,7 +7254,11 @@ Elm.Game.make = function (_elm) {
               w,
               w,
               $Graphics$Element.midRight,
-              A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: true,_1: true,_2: n,_3: 0}),w2))
+              A2(makePlusButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: true,_1: true,_2: n,_3: 0}),
+              w2))
               ,A2(drawSquare,A2(ith,3 * n,xs),w)
               ,A2(drawSquare,A2(ith,3 * n + 1,xs),w)
               ,A2(drawSquare,A2(ith,3 * n + 2,xs),w)
@@ -7148,7 +7266,12 @@ Elm.Game.make = function (_elm) {
               w,
               w,
               $Graphics$Element.midLeft,
-              A3(makeShiftButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: false,_1: false,_2: n,_3: 0}),w2,true))]));
+              A3(makeShiftButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: false,_1: false,_2: n,_3: 0}),
+              w2,
+              true))]));
    });
    var drawRow5 = F2(function (w,w2) {
       return A2($Graphics$Element.flow,
@@ -7158,17 +7281,29 @@ Elm.Game.make = function (_elm) {
               w,
               w,
               $Graphics$Element.midTop,
-              A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: true,_1: false,_2: 0,_3: 0}),w2))
+              A2(makePlusButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: true,_1: false,_2: 0,_3: 0}),
+              w2))
               ,A4($Graphics$Element.container,
               w,
               w,
               $Graphics$Element.midTop,
-              A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: true,_1: false,_2: 1,_3: 0}),w2))
+              A2(makePlusButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: true,_1: false,_2: 1,_3: 0}),
+              w2))
               ,A4($Graphics$Element.container,
               w,
               w,
               $Graphics$Element.midTop,
-              A2(makePlusButton,A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: true,_1: false,_2: 2,_3: 0}),w2))]));
+              A2(makePlusButton,
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: true,_1: false,_2: 2,_3: 0}),
+              w2))]));
    });
    var drawWin = F2(function (w,n) {
       var h = $Basics.round($Basics.toFloat(w) * 1);
@@ -7182,22 +7317,34 @@ Elm.Game.make = function (_elm) {
       var scoreY = $Basics.round($Basics.toFloat(x) / 2 + $Basics.toFloat(w) * -0.1);
       return A2($Graphics$Element.flow,
       $Graphics$Element.outward,
-      _U.list([A4($Graphics$Element.container,x,x,$Graphics$Element.middle,A3($Graphics$Element.image,w * 4,w * 4,"./images/win.png"))
+      _U.list([A4($Graphics$Element.container,
+              x,
+              x,
+              $Graphics$Element.middle,
+              A3($Graphics$Element.image,w * 4,w * 4,"./images/win.png"))
               ,A4($Graphics$Element.container,
               x,
               x,
-              A2($Graphics$Element.middleAt,$Graphics$Element.absolute(scoreX),$Graphics$Element.absolute(scoreY)),
+              A2($Graphics$Element.middleAt,
+              $Graphics$Element.absolute(scoreX),
+              $Graphics$Element.absolute(scoreY)),
               $Graphics$Element.centered(A2($Text.color,
               $Color.lightCharcoal,
               A2($Text.height,
               $Basics.toFloat(w) / 5,
-              $Text.fromString(A2($Basics._op["++"],"It took you ",A2($Basics._op["++"],$Basics.toString(n)," moves")))))))
+              $Text.fromString(A2($Basics._op["++"],
+              "It took you ",
+              A2($Basics._op["++"],$Basics.toString(n)," moves")))))))
               ,A4($Graphics$Element.container,
               x,
               x,
-              A2($Graphics$Element.middleAt,$Graphics$Element.absolute(newBrdX),$Graphics$Element.absolute(newBrdY)),
+              A2($Graphics$Element.middleAt,
+              $Graphics$Element.absolute(newBrdX),
+              $Graphics$Element.absolute(newBrdY)),
               A4($Graphics$Input.customButton,
-              A2($Signal.message,chgBox.address,{ctor: "_Tuple4",_0: false,_1: false,_2: -3,_3: -1}),
+              A2($Signal.message,
+              chgBox.address,
+              {ctor: "_Tuple4",_0: false,_1: false,_2: -3,_3: -1}),
               A3($Graphics$Element.image,h,iw,"./images/newboard.png"),
               A3($Graphics$Element.image,h,iw,"./images/newboardh.png"),
               A3($Graphics$Element.image,h,iw,"./images/newboard.png")))]));
@@ -7209,27 +7356,50 @@ Elm.Game.make = function (_elm) {
       var _p24 = _p21;
       var _p26 = _p24._0;
       var _p25 = _p24._2;
-      var w = $Basics.round($Basics.toFloat(A2($Basics.min,_p27,_p28)) / 7);
+      var w = $Basics.round($Basics.toFloat(A2($Basics.min,
+      _p27,
+      _p28)) / 6);
       var w2 = $Basics.round($Basics.toFloat(w) * 0.75);
-      var title = A4($Graphics$Element.container,w * 5,w,$Graphics$Element.middle,A3($Graphics$Element.image,w * 4,w,"./images/ali9nB.png"));
+      var title = A4($Graphics$Element.container,
+      w * 5,
+      w,
+      $Graphics$Element.middle,
+      A3($Graphics$Element.image,w * 4,w,"./images/ali9nB.png"));
       var board = A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _U.list([A3(drawRow1,w,w2,_p25),A4(drawRown,w,w2,0,_p26),A4(drawRown,w,w2,1,_p26),A4(drawRown,w,w2,2,_p26),A2(drawRow5,w,w2)]));
+      _U.list([A3(drawRow1,w,w2,_p25)
+              ,A4(drawRown,w,w2,0,_p26)
+              ,A4(drawRown,w,w2,1,_p26)
+              ,A4(drawRown,w,w2,2,_p26)
+              ,A2(drawRow5,w,w2)]));
       return _p24._1 ? A4($Graphics$Element.container,
       _p27,
       _p28,
       $Graphics$Element.midTop,
       A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _U.list([title,A2($Graphics$Element.flow,$Graphics$Element.outward,_U.list([board,A2(drawWin,w,_p25)]))]))) : A4($Graphics$Element.container,
+      _U.list([title
+              ,A2($Graphics$Element.flow,
+              $Graphics$Element.outward,
+              _U.list([board
+                      ,A2(drawWin,w,_p25)]))]))) : A4($Graphics$Element.container,
       _p27,
       _p28,
       $Graphics$Element.midTop,
-      A2($Graphics$Element.flow,$Graphics$Element.down,_U.list([title,board])));
+      A2($Graphics$Element.flow,
+      $Graphics$Element.down,
+      _U.list([title,board])));
    });
-   var main = A3($Signal.map2,view,$Window.dimensions,A3($Signal.foldp,upstate,initState,A2($Signal.merge,chgBox.signal,scramble)));
+   var main = A3($Signal.map2,
+   view,
+   $Window.dimensions,
+   A3($Signal.foldp,
+   upstate,
+   initState,
+   A2($Signal.merge,chgBox.signal,scramble)));
    return _elm.Game.values = {_op: _op
                              ,chgBox: chgBox
+                             ,upstate: upstate
                              ,row1: row1
                              ,row2: row2
                              ,row3: row3
@@ -7246,7 +7416,6 @@ Elm.Game.make = function (_elm) {
                              ,drawWin: drawWin
                              ,drawCount: drawCount
                              ,allNine: allNine
-                             ,upstate: upstate
                              ,ith: ith
                              ,colIncr: colIncr
                              ,rowIncr: rowIncr
