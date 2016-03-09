@@ -6959,6 +6959,12 @@ Elm.Game.make = function (_elm) {
                    ,_1: false
                    ,_2: 0
                    ,_3: 40};
+   var timeRandom = Elm.Native.Port.make(_elm).inbound("timeRandom",
+   "Int",
+   function (v) {
+      return typeof v === "number" && isFinite(v) && Math.floor(v) === v ? v : _U.badPort("an integer",
+      v);
+   });
    var generateMove = function (s) {
       return A2($Random.generate,
       A5($Random.map4,
@@ -6977,7 +6983,7 @@ Elm.Game.make = function (_elm) {
       s);
    };
    var scrambleHelp = function () {
-      var initSeed = $Random.initialSeed(4);
+      var initSeed = $Random.initialSeed(timeRandom);
       return A3($Signal.foldp,
       F2(function (tick,_p0) {
          var _p1 = _p0;
@@ -7004,7 +7010,7 @@ Elm.Game.make = function (_elm) {
                   }
             } else {
                return _U.crashCase("Game",
-               {start: {line: 198,column: 3},end: {line: 202,column: 51}},
+               {start: {line: 199,column: 3},end: {line: 203,column: 51}},
                _p4)("Outside of List Bounds");
             }
       }
@@ -7382,13 +7388,20 @@ Elm.Game.make = function (_elm) {
               ,A2($Graphics$Element.flow,
               $Graphics$Element.outward,
               _U.list([board
-                      ,A2(drawWin,w,_p25)]))]))) : A4($Graphics$Element.container,
-      _p27,
-      _p28,
-      $Graphics$Element.midTop,
-      A2($Graphics$Element.flow,
+                      ,A2(drawWin,w,_p25)]))]))) : A2($Graphics$Element.flow,
       $Graphics$Element.down,
-      _U.list([title,board])));
+      _U.list([A4($Graphics$Element.container,
+              _p27,
+              _p28,
+              $Graphics$Element.midTop,
+              A2($Graphics$Element.flow,
+              $Graphics$Element.down,
+              _U.list([title,board])))
+              ,$Graphics$Element.centered($Text.fromString(A2($Basics._op["++"],
+              "It took you ",
+              A2($Basics._op["++"],
+              $Basics.toString(timeRandom),
+              " moves"))))]));
    });
    var main = A3($Signal.map2,
    view,
