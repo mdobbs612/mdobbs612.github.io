@@ -12,7 +12,11 @@
   <body></body>
 
   <script type="text/javascript">
-  var ali9n = Elm.fullscreen(Elm.Game);
+  var seconds = Math.floor (new Date().getTime() % 1000);
+  var ali9n = Elm.fullscreen(Elm.Game, {
+    timeRandom:seconds
+  });
   </script>
+
 
 </html>
