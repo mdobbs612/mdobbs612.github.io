@@ -6954,7 +6954,7 @@ Elm.Game.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Window = Elm.Window.make(_elm);
    var _op = {};
-   var initState = {ctor: "_Tuple4",_0: _U.list([0,0,0,0,0,0,0,0,0]),_1: false,_2: 0,_3: 40};
+   var initState = {ctor: "_Tuple4",_0: _U.list([0,0,0,0,0,0,0,0,0]),_1: false,_2: 0,_3: 60};
    var timeRandom = Elm.Native.Port.make(_elm).inbound("timeRandom",
    "Int",
    function (v) {
@@ -7089,7 +7089,7 @@ Elm.Game.make = function (_elm) {
       var _p14 = _p12._3;
       var _p13 = _p12._2;
       if (_U.eq(_p14,0) && _U.eq(_p18,1) || _U.eq(_p17,3)) return {ctor: "_Tuple4",_0: _p15,_1: _p12._1,_2: _p13,_3: _p14}; else if (_U.eq(_p18,-1))
-         return {ctor: "_Tuple4",_0: _p15,_1: false,_2: 0,_3: 40}; else if (allNine(_p15) && _U.eq(_p18,0)) return {ctor: "_Tuple4"
+         return {ctor: "_Tuple4",_0: _p15,_1: false,_2: 0,_3: 60}; else if (allNine(_p15) && _U.eq(_p18,0)) return {ctor: "_Tuple4"
                                                                                                                    ,_0: _p15
                                                                                                                    ,_1: true
                                                                                                                    ,_2: _p13
