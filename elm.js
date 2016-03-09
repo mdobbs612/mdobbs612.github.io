@@ -6958,7 +6958,7 @@ Elm.Game.make = function (_elm) {
                    ,_0: _U.list([0,0,0,8,8,8,0,0,0])
                    ,_1: false
                    ,_2: 0
-                   ,_3: 40};
+                   ,_3: 60};
    var timeRandom = Elm.Native.Port.make(_elm).inbound("timeRandom",
    "Int",
    function (v) {
@@ -6992,7 +6992,7 @@ Elm.Game.make = function (_elm) {
       {ctor: "_Tuple2"
       ,_0: {ctor: "_Tuple4",_0: false,_1: false,_2: -3,_3: 1}
       ,_1: initSeed},
-      $Time.every(20));
+      $Time.every(15));
    }();
    var scramble = function () {
       var getE = function (_p2) {    var _p3 = _p2;return _p3._0;};
@@ -7165,7 +7165,7 @@ Elm.Game.make = function (_elm) {
                                                                                              ,_0: _p17
                                                                                              ,_1: false
                                                                                              ,_2: 0
-                                                                                             ,_3: 40}; else if (_U.eq(_p19,-1)) return {ctor: "_Tuple4"
+                                                                                             ,_3: 60}; else if (_U.eq(_p19,-1)) return {ctor: "_Tuple4"
                                                                                                                                        ,_0: _p17
                                                                                                                                        ,_1: false
                                                                                                                                        ,_2: _p15
