@@ -7010,7 +7010,7 @@ Elm.Four.make = function (_elm) {
                   }
             } else {
                return _U.crashCase("Four",
-               {start: {line: 208,column: 3},end: {line: 212,column: 51}},
+               {start: {line: 207,column: 3},end: {line: 211,column: 51}},
                _p4)("Outside of List Bounds");
             }
       }
@@ -7430,17 +7430,12 @@ Elm.Four.make = function (_elm) {
                       _p27)]))]))) : A2($Graphics$Element.flow,
       $Graphics$Element.down,
       _U.list([A4($Graphics$Element.container,
-              _p29,
-              _p30,
-              $Graphics$Element.midTop,
-              A2($Graphics$Element.flow,
-              $Graphics$Element.down,
-              _U.list([title,board])))
-              ,$Graphics$Element.centered($Text.fromString(A2($Basics._op["++"],
-              "It took you ",
-              A2($Basics._op["++"],
-              $Basics.toString(timeRandom),
-              " moves"))))]));
+      _p29,
+      _p30,
+      $Graphics$Element.midTop,
+      A2($Graphics$Element.flow,
+      $Graphics$Element.down,
+      _U.list([title,board])))]));
    });
    var main = A3($Signal.map2,
    view,
