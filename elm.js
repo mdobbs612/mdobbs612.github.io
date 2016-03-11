@@ -7217,28 +7217,28 @@ Elm.Game.make = function (_elm) {
                                  return {ctor: "_Tuple4"
                                         ,_0: xs$
                                         ,_1: allNine(xs$)
-                                        ,_2: _p15 + 1
+                                        ,_2: _p15 + 1 - _p20
                                         ,_3: _p16 - _p20};
                               } else {
                                  var xs$ = A2(rowIncr,_p19,_p17);
                                  return {ctor: "_Tuple4"
                                         ,_0: xs$
                                         ,_1: allNine(xs$)
-                                        ,_2: _p15 + 1
+                                        ,_2: _p15 + 1 - _p20
                                         ,_3: _p16 - _p20};
                               } else if (_p18) {
                                  var xs$ = A2(colShift,_p19,_p17);
                                  return {ctor: "_Tuple4"
                                         ,_0: xs$
                                         ,_1: allNine(_p17)
-                                        ,_2: _p15 + 1
+                                        ,_2: _p15 + 1 - _p20
                                         ,_3: _p16 - _p20};
                               } else {
                                  var xs$ = A2(rowShift,_p19,_p17);
                                  return {ctor: "_Tuple4"
                                         ,_0: xs$
                                         ,_1: allNine(xs$)
-                                        ,_2: _p15 + 1
+                                        ,_2: _p15 + 1 - _p20
                                         ,_3: _p16 - _p20};
                               }
    });
