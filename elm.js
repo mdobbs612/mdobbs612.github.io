@@ -6959,6 +6959,12 @@ Elm.Game.make = function (_elm) {
                    ,_1: false
                    ,_2: 0
                    ,_3: 60};
+   var isMobile = Elm.Native.Port.make(_elm).inbound("isMobile",
+   "Bool",
+   function (v) {
+      return typeof v === "boolean" ? v : _U.badPort("a boolean (true or false)",
+      v);
+   });
    var timeRandom = Elm.Native.Port.make(_elm).inbound("timeRandom",
    "Int",
    function (v) {
@@ -7010,7 +7016,7 @@ Elm.Game.make = function (_elm) {
                   }
             } else {
                return _U.crashCase("Game",
-               {start: {line: 212,column: 3},end: {line: 216,column: 51}},
+               {start: {line: 215,column: 3},end: {line: 219,column: 51}},
                _p4)("Outside of List Bounds");
             }
       }
@@ -7106,21 +7112,36 @@ Elm.Game.make = function (_elm) {
       return A3($Graphics$Element.image,w,w,imgsrc);
    });
    var makeShiftButton = F3(function (msg,w,r) {
-      return r ? A4($Graphics$Input.customButton,
+      return r ? isMobile ? A2($Graphics$Input.clickable,
+      msg,
+      A3($Graphics$Element.image,
+      w,
+      w,
+      "./images/incrr.png")) : A4($Graphics$Input.customButton,
       msg,
       A3($Graphics$Element.image,w,w,"./images/incrr.png"),
       A3($Graphics$Element.image,w,w,"./images/incrrh.png"),
       A3($Graphics$Element.image,
       w,
       w,
-      "./images/incrrc.png")) : A4($Graphics$Input.customButton,
+      "./images/incrrc.png")) : isMobile ? A2($Graphics$Input.clickable,
+      msg,
+      A3($Graphics$Element.image,
+      w,
+      w,
+      "./images/incr.png")) : A4($Graphics$Input.customButton,
       msg,
       A3($Graphics$Element.image,w,w,"./images/incr.png"),
       A3($Graphics$Element.image,w,w,"./images/incrh.png"),
       A3($Graphics$Element.image,w,w,"./images/incrc.png"));
    });
    var makePlusButton = F2(function (msg,w) {
-      return A4($Graphics$Input.customButton,
+      return isMobile ? A2($Graphics$Input.clickable,
+      msg,
+      A3($Graphics$Element.image,
+      w,
+      w,
+      "./images/plus.png")) : A4($Graphics$Input.customButton,
       msg,
       A3($Graphics$Element.image,w,w,"./images/plus.png"),
       A3($Graphics$Element.image,w,w,"./images/plush.png"),
@@ -7260,7 +7281,7 @@ Elm.Game.make = function (_elm) {
               {ctor: "_Tuple4",_0: false,_1: true,_2: 2,_3: 0}),
               w2,
               false))
-              ,A3($Graphics$Element.image,w,w2,"./images/empty.png")]));
+              ,A2(drawCount,w2,n)]));
    });
    var drawRown = F4(function (w,w2,n,xs) {
       return A2($Graphics$Element.flow,
