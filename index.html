@@ -13,8 +13,8 @@
 
   <script type="text/javascript">
   //var isMobile = false
-  //if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {isMbile = true}
   var mobs = false;
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {mobs = true}
   var seconds = Math.floor (new Date().getTime() % 1000);
   var ali9n = Elm.fullscreen(Elm.Game, {
     timeRandom:seconds,
