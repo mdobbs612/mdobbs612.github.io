@@ -9,7 +9,7 @@
 	<meta id="meta" name="viewport"
 content="width=device-width; initial-scale=1.0" />
 	<style>
-	#header {
+        #header {
 	background-color: #303e48;
 	color: white;
 	width: 100%;
@@ -18,13 +18,11 @@ content="width=device-width; initial-scale=1.0" />
 	padding: 5px;
 	font-family: 'Montserrat', sans-serif;
 }
-
 #logo {
 	position: relative;
 	float: left;
 	padding: 5px;
 }
-
 h1 {
 	position: relative;
 	float: left;
@@ -37,7 +35,6 @@ body {
 	margin: 0;
 	background-color: #acb8c8;
 }
-
 #menuButton {
 	background-image: url("button.png");
 	background-size: 30px 30px;
@@ -51,25 +48,21 @@ body {
 	padding: 0px;
 	border: none;
 }
-
 #menuButton:hover, #menuButton:focus {
 	background-color: transparent;
 	border: none;
 	outline: 0;
 }
-
 #menu {
 	position: relative;
 	float: right;
 	display: inline-block;
 }
-
 .menuContent {
 	width: 100%;
 	display: none;
-	position: absolute;
+	position: relative;
 }
-
 .menuContent a {
 	text-decoration: none;
 	font-family: 'Montserrat', sans-serif;
@@ -84,10 +77,48 @@ body {
 	padding 12px 16px;
 	display: block;
 }
+.option {
+    line-height: 60px;
+    text-align: left;
+    font-size: 25px;
+    text-indent: 40px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    padding: 5px;
+    margin-top: 5px;
+    height: 120px;
+}
+.smallOption {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    width: 49.5%;
+    background-color: white;
+    padding: 0px;
+    height: 150px;
+    margin-top: 5px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.option > div {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    width: 50%;
+    text-indent: 0;
+}
+.smallOption > div {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    width: 50%;
+    text-indent: 0;
+}
 
 .show {display:block;}
-
 	</style>
+    </style>
+
 	
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -116,6 +147,21 @@ body {
 			<a href='#'>Announcements</a>
 	
 </div>
+    
+<div class="options">
+        <div class= "option">Documentation
+            <div>Reference product guides for admins and end-users.</div></div>
+        <div class= "option">Releases
+            <div>Download installers and view release notes</div></div>
+        <div class= "smallOption">Knowledge Base
+            <div>Find solutions and technical articles</div></div>
+        <div class= "smallOption">Community
+            <div>Share your knowledge and feedback and learn from others</div></div>
+        <div class= "option">Podcasts
+            <div>Listen to the latest iManage Support news and lessons.</div></div>
+        <div class= "option">Videos
+            <div>Watch tutorials and product training videos.</div></div>
+</div>
 
 	
 	
@@ -125,11 +171,9 @@ toggle between hiding and showing the dropdown content */
 function menuFunction() {
     document.getElementById("menuContent").classList.toggle("show");
 }
-
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('#menuButton')) {
-
     var dropdowns = document.getElementsByClassName("menuContent");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
