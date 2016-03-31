@@ -84,17 +84,33 @@ body {
     text-indent: 40px;
     font-family: 'Montserrat', sans-serif;
     background-color: white;
-    padding: 5px;
+    padding: 0px;
     margin-top: 5px;
-    height: 120px;
+    height: 160px;
 }
-.smallOption {
+#optionLeft {
+    float: left;
+    width: 49.5%;
+    background-color: white;
+    padding: 0px;
+    height: 150px;
+    margin-top: 5px;
+    text-indent: 2px;
+    line-height: normal;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#optionRight {
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     width: 49.5%;
     background-color: white;
     padding: 0px;
     height: 150px;
+    text-indent: 2px;
+    line-height: normal;
+    float: right;
     margin-top: 5px;
     display: inline-block;
     overflow: hidden;
@@ -102,22 +118,30 @@ body {
 
 .option > div {
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 14px;
-    width: 50%;
-    text-indent: 0;
-}
-.smallOption > div {
-    font-family: 'Montserrat', sans-serif;
+    padding-left: 10px;
     font-size: 14px;
     line-height: 14px;
     width: 50%;
     text-indent: 0;
 }
 
+#optionRight > div, #optionLeft > div {
+    width: 80%;
+}
+
+#footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
 .show {display:block;}
 	</style>
-    </style>
 
 	
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -153,13 +177,13 @@ body {
             <div>Reference product guides for admins and end-users.</div></div>
         <div class= "option">Releases
             <div>Download installers and view release notes</div></div>
-        <div class= "smallOption">Knowledge Base
+        <div id = "optionLeft" class= "option">Knowledge Base
             <div>Find solutions and technical articles</div></div>
-        <div class= "smallOption">Community
+        <div id = "optionRight" class= "option">Community
             <div>Share your knowledge and feedback and learn from others</div></div>
-        <div class= "option">Podcasts
+        <div id = "optionLeft" class= "option">Podcasts
             <div>Listen to the latest iManage Support news and lessons.</div></div>
-        <div class= "option">Videos
+        <div id = "optionRight" class= "option">Videos
             <div>Watch tutorials and product training videos.</div></div>
 </div>
 
@@ -189,7 +213,7 @@ window.onclick = function(event) {
 
 	
 <div id="footer">	
-Chicago, IL or Something
+Copyright  © 2016, iManage, All rights reserved
 </div>
 	
 	
