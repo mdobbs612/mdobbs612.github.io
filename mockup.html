@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>iManage Help Center</title>
 
-	<meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
+	<meta id="meta" name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500' rel='stylesheet' type='text/css'>
@@ -39,6 +39,15 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+p {
+  text-align: center;
+  font-size: 29px;
+  color: 192853;
+  font-weight: 100;
+  line-height: 2;
+  margin-bottom: 0px;
 }
 
 #menuButton {
@@ -213,19 +222,80 @@ body {
     width: 70%;
 }
 
-#footer {
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px;
-    position: relative;
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-    
+.resourceType {
+  width: auto;
+  position: relative;
+  margin: 5px;
+  margin-bottom: 0px;
+  float: left;
+  height: 30px;
+  color: white;
 }
 
-.show {display:block;}</style>
-  
+.resourceType > button {
+  width: auto;
+  height: 30px;
+  border: none;
+  background-color: #192853;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+.resourceType > button:focus {
+  border: none;
+  outline: none;
+}
+
+#releasesButton {
+  background-color: white;
+  color: #192853;
+}
+
+.resources {
+  position: absolute;
+  margin: 4px;
+  display: block;
+  background-color: #d5dae9;
+  border-radius: 5px;
+}
+
+#resourceBox {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.resourceContent {
+  margin: 4px;
+  margin-top: 0px;
+  background-color: white;
+  padding: 3px;
+  font-size: 14px;
+}
+      
+#documentationContent, #practicesContent {
+  display: none;
+}
+
+.resourceText {
+  margin: 6px;
+  padding: 5px;
+  border: solid 2px #d5dae9;
+  border-radius: 5px;
+}
+
+.show {display:block;}
+
+.hideResource {
+  background-color: #192853;
+  color: white;
+}
+
+.showResource {
+  background-color: white;
+  color: #192853;
+}</style>
 </head>
 
 
@@ -288,14 +358,104 @@ body {
   <div id = "videos"><img src = "./videos.png" width="120"></div>
 </div>
 
+<p>Work 9 Resources</p>
 	
-	
+<div class = "resources">
+  <div class = "resourceType">
+    <button onclick="resourceFunction(1)" id="releasesButton" >Releases </button>
+  </div>
+  <div class = "resourceType">
+    <button onclick="resourceFunction(2)" id="documentationButton">Documentation </button>
+  </div>
+  <div class = "resourceType">
+    <button onclick="resourceFunction(3)" id = "practicesButton">Best Practices </button>
+  </div>
+  <div id = "resourceBox">
+    <div id = "releasesContent" class = "resourceContent">
+    <div class = "resourceText">
+      <a href="#">iManage Clustering Service 9.3</a><br>
+      <a href="#">iManage Work Server 9.3</a><br>
+      <a href="#">iManage Work Server with Caching 9.3</a><br>
+      <a href="#">DeskSite 9.3</a><br>
+      <a href="#">FileSite 9.3</a><br>
+      <a href="#">OffSite 9.3</a><br>
+      <a href="#">Communication Server for Exchange 9.2.2</a><br>
+      <a href="#">iManage Clustering Service 9.2</a><br>
+      <a href="#">WorkSite Web 9.0 Update 3</a><br>
+      <a href="#">iManage FileShare 9.1</a><br>
+      <a href="#">iManage Indexer 8.5 SP3 Update 1a</a><br>
+    </div></div>
+    <div id = "documentationContent" class = "resourceContent">
+    <div class = "resourceText">
+      <a href="#">Documentation Fake Text</a><br>
+      <a href="#">Another Document</a><br>
+      <a href="#">Document 9.3</a><br>
+      <a href="#">Making up more Documentation</a><br>
+      <a href="#">A couple more lines</a><br>
+      <a href="#">Should do </a><br>
+      <a href="#">This has been Documentation</a><br>
+    </div></div>
+    <div id = "practicesContent" class = "resourceContent">
+    <div class = "resourceText">
+      <a href="#">These are Clearly </a><br>
+      <a href="#">The Best</a><br>
+      <a href="#">Practices out of all of the Practices</a><br>
+      <a href="#">Pay close attention</a><br>
+      <a href="#">To these practices</a><br>
+      <a href="#">They are the best ones</a><br>
+      <a href="#">Closely followed </a><br>
+      <a href="#">By other Practices</a><br>
+      <a href="#">That's probably sufficient Practices</a><br>
+    </div></div>
+  </div>
+  
+</div>
+  
+  
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function menuFunction() {
     document.getElementById("menuContent").classList.toggle("show");
-}
+};
+  
+function resourceFunction(resource) {
+  if (resource == 1) {
+    document.getElementById("releasesButton").style.color = "#192853"
+    document.getElementById("releasesButton").style.backgroundColor = "white";
+    document.getElementById("documentationButton").style.color = "white"
+    document.getElementById("documentationButton").style.backgroundColor = "#192853";
+    document.getElementById("practicesButton").style.color = "white"
+    document.getElementById("practicesButton").style.backgroundColor = "#192853";
+    document.getElementById("releasesContent").style.display = "block";
+    document.getElementById("documentationContent").style.display = "none";
+    document.getElementById("practicesContent").style.display = "none";
+  } else if (resource == 2) {
+    document.getElementById("releasesButton").style.color = "white"
+    document.getElementById("releasesButton").style.backgroundColor = "#192853";
+    document.getElementById("documentationButton").style.color = "#192853"
+    document.getElementById("documentationButton").style.backgroundColor = "white";
+    document.getElementById("practicesButton").style.color = "white"
+    document.getElementById("practicesButton").style.backgroundColor = "#192853";
+    
+    document.getElementById("releasesContent").style.display = "none";
+    document.getElementById("documentationContent").style.display = "block";
+    document.getElementById("practicesContent").style.display = "none";
+  } else {
+    document.getElementById("releasesButton").style.color = "white"
+    document.getElementById("releasesButton").style.backgroundColor = "#192853";
+    document.getElementById("documentationButton").style.color = "white"
+    document.getElementById("documentationButton").style.backgroundColor = "#192853";
+    document.getElementById("practicesButton").style.color = "#192853"
+    document.getElementById("practicesButton").style.backgroundColor = "white";
+    
+    document.getElementById("releasesContent").style.display = "none";
+    document.getElementById("documentationContent").style.display = "none";
+    document.getElementById("practicesContent").style.display = "block";
+  }
+};
+  
+  
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('#menuButton')) {
@@ -313,9 +473,7 @@ window.onclick = function(event) {
 
 
 	
-<div id="footer">	
-Copyright  © 2016, iManage, All rights reserved
-</div>
+
 	
 	
 </body>
