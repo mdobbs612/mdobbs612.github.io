@@ -28,26 +28,11 @@
 	float: left;
 	padding: 5px;
 }
-h1 {
-	position: relative;
-	float: left;
-	margin-left: 5px;
-	width: 60%;
-	font-size: 40px;
-}
 body {
 	padding: 0;
 	margin: 0;
 	background-color: #fff;
     font-family: "Raleway", sans-serif;
-}
-p {
-  text-align: center;
-  font-size: 29px;
-  color: 192853;
-  font-weight: 100;
-  line-height: 2;
-  margin-bottom: 0px;
 }
 
 #menuButton {
@@ -144,7 +129,7 @@ p {
   float: right;
 }
 
-#searchButton:focus {
+#searchButton:focus, .footerOption > button:focus {
   outline: none;
 }
 
@@ -181,7 +166,7 @@ p {
     width: 33.3%;
     padding: 0px;
     height: 120px;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-right: -2px;
     border-right: solid #192853 2px;
     text-align: center;
@@ -222,14 +207,39 @@ p {
     width: 70%;
 }
 
+#resourcesLabel {
+  text-align: center;
+  font-size: 29px;
+  color: 192853;
+  font-weight: 100;
+  line-height: 2;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.resources {
+  position: relative;
+  clear: both;
+}
+
+.resourceHolder {
+  position: relative;
+  overflow: hidden;
+  margin: 4px;
+  display: block;
+  background-color: #d5dae9;
+  border-radius: 5px;
+}
+
 .resourceType {
   width: auto;
   position: relative;
-  margin: 5px;
+  margin: 4px;
   margin-bottom: 0px;
   float: left;
   height: 30px;
   color: white;
+  
 }
 
 .resourceType > button {
@@ -240,6 +250,8 @@ p {
   color: white;
   font-family: "Raleway", sans-serif;
   text-align: center;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .resourceType > button:focus {
@@ -252,14 +264,6 @@ p {
   color: #192853;
 }
 
-.resources {
-  position: absolute;
-  margin: 4px;
-  display: block;
-  background-color: #d5dae9;
-  border-radius: 5px;
-}
-
 #resourceBox {
   position: relative;
   float: left;
@@ -270,10 +274,13 @@ p {
   margin: 4px;
   margin-top: 0px;
   background-color: white;
-  padding: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 4px;
   font-size: 14px;
 }
-      
+
 #documentationContent, #practicesContent {
   display: none;
 }
@@ -285,17 +292,77 @@ p {
   border-radius: 5px;
 }
 
-.show {display:block;}
-
-.hideResource {
+#footer {
+  display: block;
+  position: relative;
+  margin-top: 30px;
   background-color: #192853;
-  color: white;
 }
 
-.showResource {
-  background-color: white;
-  color: #192853;
-}</style>
+.footerOption {
+  width: 80%;
+  margin: auto;
+  text-indent: 2px;
+  color: #d5dae9;
+  padding: 6px;
+  line-height: 30px;
+  border-bottom: solid #d5dae9 1px;
+}
+
+.footerOption > img, .footerOption > button > img{
+  width: 30px;
+  float: right;
+  height: 30px;
+}
+
+.footerOption > button {
+  float: right;
+  padding: 0;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+}
+
+.footerExpand {
+  color: white;
+  width: 70%;
+  margin: auto;
+  line-height: normal;
+  padding: 5px;
+  display: none;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: outside;
+  padding-left: 0px;
+}
+
+li {
+  margin-top: 5px
+}
+
+ li > a {
+  font-size: 14px;
+  color: #d5dae9;
+}
+
+
+#copyright {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 14px;
+}
+
+.address {
+  font-size: 12px;
+  line-height: normal;
+  padding-left: 20px;
+}
+
+.show {display:block;}
+</style>
 </head>
 
 
@@ -358,57 +425,129 @@ p {
   <div id = "videos"><img src = "./videos.png" width="120"></div>
 </div>
 
-<p>Work 9 Resources</p>
-	
-<div class = "resources">
-  <div class = "resourceType">
-    <button onclick="resourceFunction(1)" id="releasesButton" >Releases </button>
-  </div>
-  <div class = "resourceType">
-    <button onclick="resourceFunction(2)" id="documentationButton">Documentation </button>
-  </div>
-  <div class = "resourceType">
-    <button onclick="resourceFunction(3)" id = "practicesButton">Best Practices </button>
-  </div>
-  <div id = "resourceBox">
-    <div id = "releasesContent" class = "resourceContent">
-    <div class = "resourceText">
-      <a href="#">iManage Clustering Service 9.3</a><br>
-      <a href="#">iManage Work Server 9.3</a><br>
-      <a href="#">iManage Work Server with Caching 9.3</a><br>
-      <a href="#">DeskSite 9.3</a><br>
-      <a href="#">FileSite 9.3</a><br>
-      <a href="#">OffSite 9.3</a><br>
-      <a href="#">Communication Server for Exchange 9.2.2</a><br>
-      <a href="#">iManage Clustering Service 9.2</a><br>
-      <a href="#">WorkSite Web 9.0 Update 3</a><br>
-      <a href="#">iManage FileShare 9.1</a><br>
-      <a href="#">iManage Indexer 8.5 SP3 Update 1a</a><br>
-    </div></div>
-    <div id = "documentationContent" class = "resourceContent">
-    <div class = "resourceText">
-      <a href="#">Documentation Fake Text</a><br>
-      <a href="#">Another Document</a><br>
-      <a href="#">Document 9.3</a><br>
-      <a href="#">Making up more Documentation</a><br>
-      <a href="#">A couple more lines</a><br>
-      <a href="#">Should do </a><br>
-      <a href="#">This has been Documentation</a><br>
-    </div></div>
-    <div id = "practicesContent" class = "resourceContent">
-    <div class = "resourceText">
-      <a href="#">These are Clearly </a><br>
-      <a href="#">The Best</a><br>
-      <a href="#">Practices out of all of the Practices</a><br>
-      <a href="#">Pay close attention</a><br>
-      <a href="#">To these practices</a><br>
-      <a href="#">They are the best ones</a><br>
-      <a href="#">Closely followed </a><br>
-      <a href="#">By other Practices</a><br>
-      <a href="#">That's probably sufficient Practices</a><br>
-    </div></div>
-  </div>
   
+<div class = "resources">
+  <div id = "resourcesLabel">Work 9 Resources</div>
+
+  <div class = "resourceHolder">
+    <div class = "resourceType">
+      <button onclick="resourceFunction(1)" id="releasesButton" >Releases </button>
+    </div>
+    <div class = "resourceType">
+      <button onclick="resourceFunction(2)" id="documentationButton">Documentation </button>
+    </div>
+    <div class = "resourceType">
+      <button onclick="resourceFunction(3)" id = "practicesButton">Best Practices </button>
+    </div>
+    <div id = "resourceBox">
+      <div id = "releasesContent" class = "resourceContent">
+      <div class = "resourceText">
+        <a href="#">iManage Clustering Service 9.3</a><br>
+        <a href="#">iManage Work Server 9.3</a><br>
+        <a href="#">iManage Work Server with Caching 9.3</a><br>
+        <a href="#">DeskSite 9.3</a><br>
+        <a href="#">FileSite 9.3</a><br>
+        <a href="#">OffSite 9.3</a><br>
+        <a href="#">Communication Server for Exchange 9.2.2</a><br>
+        <a href="#">iManage Clustering Service 9.2</a><br>
+        <a href="#">WorkSite Web 9.0 Update 3</a><br>
+        <a href="#">iManage FileShare 9.1</a><br>
+        <a href="#">iManage Indexer 8.5 SP3 Update 1a</a><br>
+      </div></div>
+      <div id = "documentationContent" class = "resourceContent">
+      <div class = "resourceText">
+        <a href="#">Documentation Fake Text</a><br>
+        <a href="#">Another Document</a><br>
+        <a href="#">Document 9.3</a><br>
+        <a href="#">Making up more Documentation</a><br>
+        <a href="#">A couple more lines</a><br>
+        <a href="#">Should do </a><br>
+        <a href="#">This has been Documentation</a><br>
+      </div></div>
+      <div id = "practicesContent" class = "resourceContent">
+      <div class = "resourceText">
+        <a href="#">These are Clearly </a><br>
+        <a href="#">The Best</a><br>
+        <a href="#">Practices out of all of the Practices</a><br>
+        <a href="#">Pay close attention</a><br>
+        <a href="#">To these practices</a><br>
+        <a href="#">They are the best ones</a><br>
+        <a href="#">Closely followed </a><br>
+        <a href="#">By other Practices</a><br>
+        <a href="#">That's probably sufficient Practices</a><br>
+      </div></div>
+    </div>
+  </div>
+</div>
+  
+  
+<div id = "footer">
+  <div class = "footerOption" id = "news">
+    News & Highlights
+    <button onclick="expandFooter(1)" >
+      <img src = "arrow.png" alt = "arrow">
+    </button>
+    <div class="footerExpand" id = "newsExpand">
+    <ul>
+      <li><a href="#">New Podcast: iManage Work 9.3 Microsoft Office and Adobe Integration</a><br></li>
+      <li><a href="#">iManage Work Communication Server for Exchange 9.3 is now available!</a><br></li>
+      <li><a href="#">Announcing the iManage ConnectLive user conference!</a><br></li>
+      <li><a href="#">iManage Records Manager 6.3 is now available!</a><br></li>
+      <li><a href="#">View More News...</a><br></li>
+      </ul></div></div>
+  <div class = "footerOption" id = "locations">
+    Locations
+    <button onclick="expandFooter(2)" >
+      <img src = "arrow.png" alt = "arrow">
+    </button>
+    <div class="footerExpand" id = "locationsExpand">
+      Chicago <br>
+        <div class = "address">
+          iManage LLC<br>
+          540 West Madison<br>
+          Suite 2400<br>
+          Chicago, IL 60661<br>
+          (312) 683-9575<br>
+          (855) 973-1567 (toll-free)
+        </div>
+      Sunnyvale <br>
+        <div class = "address">
+          iManage LLC<br>
+          530 Lakeside Dr<br>
+          Suite 100<br>
+          Sunnyvale, CA 94085
+        </div>
+      London <br>
+        <div class = "address">
+          iManage EMEA Limited<br>
+          Suite 6.06<br>
+          80 Coleman Street<br>
+          London EC2R 5BJ
+        </div>
+      Belfast <br>
+        <div class = "address">
+          iManage EMEA Limited<br>
+          Unit 9A Innovation Centre<br>
+          Northern Ireland Science Park<br>
+          Queens Road<br>
+          BELFAST<br>
+          BT3 9DT
+        </div>
+      Bangalore <br>
+        <div class = "address">
+          Net Right Technologies (P) Ltd.<br>
+          Kadubisanahalli Village 4th Floor<br>
+          Varthur Hobli, Outer Ring Road<br>
+          Bangalore 560103
+        </div>
+    </div></div>
+  <div class = "footerOption" id = "twitter">
+    Twitter
+    <img src = "twitter.png" alt = "twitter"></div>
+  <div class = "footerOption" id = "linkedIn">
+    LinkedIn
+    <img src = "linkedIn.png" alt = "linkedIn"></div>
+  <div id = "copyright">Copyright © iManage 2016. All rights reserved.</div>
 </div>
   
   
@@ -423,35 +562,43 @@ function resourceFunction(resource) {
   if (resource == 1) {
     document.getElementById("releasesButton").style.color = "#192853"
     document.getElementById("releasesButton").style.backgroundColor = "white";
-    document.getElementById("documentationButton").style.color = "white"
-    document.getElementById("documentationButton").style.backgroundColor = "#192853";
-    document.getElementById("practicesButton").style.color = "white"
-    document.getElementById("practicesButton").style.backgroundColor = "#192853";
     document.getElementById("releasesContent").style.display = "block";
-    document.getElementById("documentationContent").style.display = "none";
-    document.getElementById("practicesContent").style.display = "none";
   } else if (resource == 2) {
-    document.getElementById("releasesButton").style.color = "white"
-    document.getElementById("releasesButton").style.backgroundColor = "#192853";
     document.getElementById("documentationButton").style.color = "#192853"
     document.getElementById("documentationButton").style.backgroundColor = "white";
-    document.getElementById("practicesButton").style.color = "white"
-    document.getElementById("practicesButton").style.backgroundColor = "#192853";
-    
-    document.getElementById("releasesContent").style.display = "none";
     document.getElementById("documentationContent").style.display = "block";
-    document.getElementById("practicesContent").style.display = "none";
   } else {
-    document.getElementById("releasesButton").style.color = "white"
-    document.getElementById("releasesButton").style.backgroundColor = "#192853";
-    document.getElementById("documentationButton").style.color = "white"
-    document.getElementById("documentationButton").style.backgroundColor = "#192853";
     document.getElementById("practicesButton").style.color = "#192853"
     document.getElementById("practicesButton").style.backgroundColor = "white";
-    
-    document.getElementById("releasesContent").style.display = "none";
-    document.getElementById("documentationContent").style.display = "none";
     document.getElementById("practicesContent").style.display = "block";
+  }
+  
+  if(resource != 1) {
+    document.getElementById("releasesButton").style.color = "white"
+    document.getElementById("releasesButton").style.backgroundColor = "#192853";
+    document.getElementById("releasesContent").style.display = "none";
+  }
+  if(resource != 2) {
+    document.getElementById("documentationButton").style.color = "white"
+    document.getElementById("documentationButton").style.backgroundColor = "#192853";
+    document.getElementById("documentationContent").style.display = "none";
+  }
+  if(resource != 3) {
+    document.getElementById("practicesButton").style.color = "white"
+    document.getElementById("practicesButton").style.backgroundColor = "#192853";
+    document.getElementById("practicesContent").style.display = "none";
+
+  }
+};
+  
+
+function expandFooter(k) {
+  if (k == 1) {
+    var news = document.getElementById("newsExpand");
+    news.style.display = news.style.display == "none" ? "block" : "none";
+  } else if (k == 2) {
+    var locations = document.getElementById("locationssExpand");
+    locations.style.display = locations.style.display == "none" ? "block" : "none";
   }
 };
   
