@@ -13,8 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:500,300,200,400' rel='stylesheet' type='text/css'>
   
-    <style>
-  #header {
+    <style>#header {
 	background-color: #192853;
 	color: white;
 	width: 100%;
@@ -62,20 +61,26 @@ body {
 	width: 100%;
 	display: none;
 	position: relative;
+    margin-bottom: 15px;
+	background-color: white;
+    padding: 0;
+    border-bottom: solid #192853 4px;
 }
 .menuContent a {
+    width: 100%;
+    margin: auto;
+    text-indent: 2px;
+    color: #192853;
+    padding: 6px;
+    line-height: 30px;
+    border-bottom: solid #192853 1px;
 	text-decoration: none;
-	font-family: 'Raleway', sans-serif;
-    font-weight: 300;
+    font-weight: 200;
 	text-align: left;
 	text-indent: 40px;
-    border-radius: 8px;
 	line-height: 30px;
-	color: white;
-	background-color: #192853;
-	margin: 3px;
-	height: 30px;
-	padding 12px 16px;
+	margin: px;
+    margin-bottom: -1px;
 	display: block;
 }
 
@@ -597,7 +602,7 @@ function expandFooter(k) {
     var news = document.getElementById("newsExpand");
     news.style.display = news.style.display == "none" ? "block" : "none";
   } else if (k == 2) {
-    var locations = document.getElementById("locationsExpand");
+    var locations = document.getElementById("locationssExpand");
     locations.style.display = locations.style.display == "none" ? "block" : "none";
   }
 };
